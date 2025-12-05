@@ -10,7 +10,7 @@ public class PerfilRedSocial {
 	private int followers;
 	private int posts;
 //	private String status;
-	private boolean verified;
+//	private boolean verified;
 
 //	CONSTRUCTOR
 	
