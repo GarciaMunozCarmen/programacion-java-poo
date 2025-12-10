@@ -9,8 +9,10 @@ public class PerfilRedSocial {
 	private String city;
 	private int followers;
 	private int posts;
-//	private String status;
-//	private boolean verified;
+//	private enum profileStatus{
+//		Able, Disabled, Blocked
+//	}
+	private boolean verified;
 
 //	CONSTRUCTOR
 	public PerfilRedSocial (String userName, String publicName, String biography, String city) {
@@ -19,6 +21,7 @@ public class PerfilRedSocial {
 		this.biography = biography;
 		this.city = city;
 		this.posts = 0;
+		this.verified = false;
 	}
 	
 // SETTERS Y GETTERS
@@ -68,6 +71,14 @@ public class PerfilRedSocial {
 
 	public void setPosts(int posts) {
 		this.posts = posts;
+	}
+
+	public boolean isVerified() {
+		return verified;
+	}
+
+	public void setVerified(boolean verified) {
+		this.verified = verified;
 	}
 	
 //	MÉTODOS
