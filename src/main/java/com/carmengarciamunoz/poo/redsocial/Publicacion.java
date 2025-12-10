@@ -9,7 +9,7 @@ public class Publicacion {
 	private LocalTime dateTime;
 	private int likes;
 	
-//	CONSTRUCTORES
+//	CONSTRUCTOR
 	public Publicacion (String content) {
 		this.text = content;
 		this.dateTime = LocalTime.now();
@@ -35,10 +35,6 @@ public class Publicacion {
 
 	public int getLikes() {
 		return likes;
-	}
-
-	public void setLikes(int likes) {
-		this.likes = likes;
 	}
 	
 //	MÉTODOS

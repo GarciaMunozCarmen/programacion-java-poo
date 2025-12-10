@@ -9,9 +9,7 @@ public class PerfilRedSocial {
 	private String city;
 	private int followers;
 	private int posts;
-//	private enum profileStatus{
-//		Able, Disabled, Blocked
-//	}
+	private ProfileStatus status;
 	private boolean verified;
 
 //	CONSTRUCTOR
@@ -20,11 +18,15 @@ public class PerfilRedSocial {
 		this.publicName = publicName;
 		this.biography = biography;
 		this.city = city;
+		this.followers = 0;
 		this.posts = 0;
+		this.status = ProfileStatus.ACTIVE;
 		this.verified = false;
 	}
 	
-// SETTERS Y GETTERS
+//	SETTERS Y GETTERS
+//	no sé si quitar algunos
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -80,8 +82,35 @@ public class PerfilRedSocial {
 	public void setVerified(boolean verified) {
 		this.verified = verified;
 	}
+
+	public ProfileStatus getStatus() {
+		return status;
+	}
+
 	
 //	MÉTODOS
+	public void show () {
+		System.out.printf("El perfil de usuario <%s (@%s) - '%s'> de %s tiene %d seguidores, %d publicaciones, está %s y %s\n", publicName, userName, biography, city, followers, posts, status.name(), verified? "verificado":"no verificado");
+	}
 	
+	public void addFollowers (int numberToAdd) {
+		this.followers += numberToAdd;
+	}
+	
+	public void deactivate () {
+		this.status = ProfileStatus.DISABLED;
+	}
+	
+	public void block() {
+		this.status = ProfileStatus.BLOCKED;
+	}
+	
+	public String isActive() {
+		if(this.status == ProfileStatus.ACTIVE) {
+			return "El perfil está activo";
+		}else {
+			return "El perfil no está activo";
+		}
+	}
 }
 
