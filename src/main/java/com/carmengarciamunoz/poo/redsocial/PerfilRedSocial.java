@@ -1,5 +1,8 @@
 package com.carmengarciamunoz.poo.redsocial;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PerfilRedSocial {
 	
 //	ATRIBUTOS
@@ -11,6 +14,7 @@ public class PerfilRedSocial {
 	private int posts;
 	private ProfileStatus status;
 	private boolean verified;
+	private List<Publicacion> postList;
 
 //	CONSTRUCTOR
 	public PerfilRedSocial (String userName, String publicName, String biography, String city) {
@@ -22,6 +26,7 @@ public class PerfilRedSocial {
 		this.posts = 0;
 		this.status = ProfileStatus.ACTIVE;
 		this.verified = false;
+		this.postList = new ArrayList<>();
 	}
 	
 //	SETTERS Y GETTERS
@@ -111,6 +116,15 @@ public class PerfilRedSocial {
 		}else {
 			return "El perfil no está activo";
 		}
+	}
+	
+	public void newPost (String content) {
+		this.postList.add(new Publicacion(content));
+		this.posts ++;
+	}
+	
+	public void showPosts() {
+		this.postList.forEach(p -> p.show());
 	}
 }
 
