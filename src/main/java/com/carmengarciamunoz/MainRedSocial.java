@@ -3,17 +3,17 @@ package com.carmengarciamunoz;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.carmengarciamunoz.poo.redsocial.GeneradorPerfiles;
-import com.carmengarciamunoz.poo.redsocial.PerfilRedSocial;
+import com.carmengarciamunoz.poo.redsocial.ProfileGenerator;
+import com.carmengarciamunoz.poo.redsocial.Profile;
 
 public class MainRedSocial {
 
 	public static void main(String[] args) {
-		PerfilRedSocial p1 = GeneradorPerfiles.testProfilePostIncludedGenerator("Carmen", 4);
-		PerfilRedSocial p2 = GeneradorPerfiles.testProfileGenerator("Pepe");
-		PerfilRedSocial p3 = GeneradorPerfiles.testProfilePostIncludedGenerator("Asier", 2);
+		Profile p1 = ProfileGenerator.testProfilePostIncludedGenerator("Carmen", 4);
+		Profile p2 = ProfileGenerator.testProfileGenerator("Pepe");
+		Profile p3 = ProfileGenerator.testProfilePostIncludedGenerator("Asier", 2);
 		
-		List<PerfilRedSocial> listUsers = new ArrayList<PerfilRedSocial>();
+		List<Profile> listUsers = new ArrayList<Profile>();
 		listUsers.add(p1);
 		listUsers.add(p2);
 		listUsers.add(p3);
