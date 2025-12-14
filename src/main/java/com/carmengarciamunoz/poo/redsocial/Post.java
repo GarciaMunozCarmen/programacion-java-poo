@@ -52,5 +52,9 @@ public class Post {
 	public String getFormatDateTime(){
 		return dateTime.format(DateTimeFormatter.ofPattern(FORMAT_DATE_TIME));
 	}
+
+	public String getFormatDateTime(DateTimeFormatter formatter){
+		return dateTime.format(formatter);
+	}
 	
 }
