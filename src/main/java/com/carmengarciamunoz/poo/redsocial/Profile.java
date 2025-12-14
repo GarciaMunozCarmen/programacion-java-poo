@@ -110,12 +110,9 @@ public class Profile {
 		this.status = ProfileStatus.BLOCKED;
 	}
 	
-	public String isActive() {
-		if(this.status == ProfileStatus.ACTIVE) {
-			return "El perfil está activo";
-		}else {
-			return "El perfil no está activo";
-		}
+
+	public boolean isActive() {
+		return this.status == ProfileStatus.ACTIVE;
 	}
 	
 	public void newPost (String content) {
