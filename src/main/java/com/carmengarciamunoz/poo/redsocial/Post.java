@@ -3,19 +3,19 @@ package com.carmengarciamunoz.poo.redsocial;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Publicacion {
+public class Post {
 	
 	private static final String FORMAT_DATE_TIME = "dd-MM-yyyy / HH:mm:ss";
 	
 //	ATRIBUTOS
 	private String text;
-	private String dateTime;
+	private LocalDateTime dateTime;
 	private int likes;
 	
 //	CONSTRUCTOR
-	public Publicacion (String content) {
+	public Post(String content) {
 		this.text = content;
-		this.dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern(FORMAT_DATE_TIME));
+		this.dateTime = LocalDateTime.now();
 		this.likes = 0;
 	}
 
@@ -28,12 +28,12 @@ public class Publicacion {
 		this.text = text;
 	}
 
-	public String getdateTime() {
+	public LocalDateTime getDateTime() {
 		return dateTime;
 	}
 
 	public void setDateTime(LocalDateTime dateTime) {
-		this.dateTime = dateTime.format(DateTimeFormatter.ofPattern(FORMAT_DATE_TIME));
+		this.dateTime = dateTime;
 	}
 
 	public int getLikes() {
@@ -47,6 +47,10 @@ public class Publicacion {
 	
 	public void show() {
 		System.out.printf("La publicación '%s' publicada (%s) tiene %d likes\n", text, dateTime, likes);
+	}
+
+	public String getFormatDateTime(){
+		return dateTime.format(DateTimeFormatter.ofPattern(FORMAT_DATE_TIME));
 	}
 	
 }
