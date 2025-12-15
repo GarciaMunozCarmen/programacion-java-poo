@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de {{nombreUsuario}}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .perfil { border: 1px solid #ccc; padding: 1rem; border-radius: 8px; max-width: 500px; }
+        .activo { color: green; font-weight: bold; }
+        .desactivado { color: red; font-weight: bold; }
+        .pub { margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="perfil">
+        <h1>@{{nombreUsuario}}</h1>
+        <h2>{{nombreVisible}}</h2>
+
+        <p><strong>Biografía:</strong> {{biografia}}</p>
+        <p><strong>País / ciudad:</strong> {{paisOCiudad}}</p>
+
+        <p><strong>Seguidores:</strong> {{numeroSeguidores}}</p>
+        <p><strong>Publicaciones:</strong> {{numeroPublicaciones}}</p>
+
+        <p><strong>Estado:</strong>
+            {{#activo}}<span class="activo">ACTIVO</span>{{/activo}}
+            {{^activo}}<span class="desactivado">DESACTIVADO</span>{{/activo}}
+        </p>
+
+        <p><strong>Verificado:</strong>
+            {{#verificado}}✅ Sí{{/verificado}}
+            {{^verificado}}❌ No{{/verificado}}
+        </p>
+
+        <h3>Publicaciones</h3>
+        <div>
+            {{#publicaciones}}
+                <div class="pub">
+                    <p><strong>{{fechaHora}}</strong></p>
+                    <p>{{texto}}</p>
+                    <p>❤️ {{numeroLikes}} me gusta</p>
+                </div>
+            {{/publicaciones}}
+            {{^publicaciones}}
+                <p>Este usuario aún no ha publicado nada.</p>
+            {{/publicaciones}}
+        </div>
+    </div>
+</body>
+</html>

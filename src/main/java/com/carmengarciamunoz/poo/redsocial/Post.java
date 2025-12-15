@@ -46,7 +46,7 @@ public class Post {
 	}
 	
 	public void show() {
-		System.out.printf("La publicación '%s' publicada (%s) tiene %d likes\n", text, dateTime, likes);
+		System.out.printf("La publicación '%s' publicada (%s) tiene %d likes\n", text, dateTime.format(DateTimeFormatter.ofPattern(FORMAT_DATE_TIME)), likes);
 	}
 
 	public String getFormatDateTime(){

@@ -30,7 +30,6 @@ public class Profile {
 	}
 	
 //	SETTERS Y GETTERS
-//	no sé si quitar algunos
 	
 	public String getUserName() {
 		return userName;

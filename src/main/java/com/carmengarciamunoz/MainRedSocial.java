@@ -9,7 +9,7 @@ import com.carmengarciamunoz.poo.redsocial.Profile;
 public class MainRedSocial {
 
 	public static void main(String[] args) {
-		Profile p1 = ProfileGenerator.testProfilePostIncludedGenerator("Carmen", 4);
+		Profile p1 = ProfileGenerator.testProfilePostIncludedGenerator("loquesea", 4);
 		Profile p2 = ProfileGenerator.testProfileGenerator("Pepe");
 		Profile p3 = ProfileGenerator.testProfilePostIncludedGenerator("Asier", 2);
 		
