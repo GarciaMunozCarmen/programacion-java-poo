@@ -3,7 +3,7 @@ package com.carmengarciamunoz.poo.redsocial;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PerfilRedSocial {
+public class Profile {
 	
 //	ATRIBUTOS
 	private String userName;
@@ -14,10 +14,10 @@ public class PerfilRedSocial {
 	private int posts;
 	private ProfileStatus status;
 	private boolean verified;
-	private List<Publicacion> postList;
+	private List<Post> postList;
 
 //	CONSTRUCTOR
-	public PerfilRedSocial (String userName, String publicName, String biography, String city) {
+	public Profile(String userName, String publicName, String biography, String city) {
 		this.userName = userName;
 		this.publicName = publicName;
 		this.biography = biography;
@@ -110,16 +110,13 @@ public class PerfilRedSocial {
 		this.status = ProfileStatus.BLOCKED;
 	}
 	
-	public String isActive() {
-		if(this.status == ProfileStatus.ACTIVE) {
-			return "El perfil está activo";
-		}else {
-			return "El perfil no está activo";
-		}
+
+	public boolean isActive() {
+		return this.status == ProfileStatus.ACTIVE;
 	}
 	
 	public void newPost (String content) {
-		this.postList.add(new Publicacion(content));
+		this.postList.add(new Post(content));
 		this.posts ++;
 	}
 	
