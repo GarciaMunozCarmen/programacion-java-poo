@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil de {{nombreUsuario}}</title>
+    <title>Perfil de {{userName}}</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 2rem; }
         .perfil { border: 1px solid #ccc; padding: 1rem; border-radius: 8px; max-width: 500px; }
@@ -13,37 +13,37 @@
 </head>
 <body>
     <div class="perfil">
-        <h1>@{{nombreUsuario}}</h1>
-        <h2>{{nombreVisible}}</h2>
+        <h1>@{{userName}}</h1>
+        <h2>{{publicName}}</h2>
 
-        <p><strong>Biografía:</strong> {{biografia}}</p>
-        <p><strong>País / ciudad:</strong> {{paisOCiudad}}</p>
+        <p><strong>Biografía:</strong> {{biography}}</p>
+        <p><strong>País / ciudad:</strong> {{city}}</p>
 
-        <p><strong>Seguidores:</strong> {{numeroSeguidores}}</p>
-        <p><strong>Publicaciones:</strong> {{numeroPublicaciones}}</p>
+        <p><strong>Seguidores:</strong> {{followers}}</p>
+        <p><strong>Publicaciones:</strong> {{posts}}</p>
 
         <p><strong>Estado:</strong>
-            {{#activo}}<span class="activo">ACTIVO</span>{{/activo}}
-            {{^activo}}<span class="desactivado">DESACTIVADO</span>{{/activo}}
+            {{#status}}<span class="ACTIVE">ACTIVO</span>{{/status}}
+            {{^status}}<span class="DISABLE">DESACTIVADO</span>{{/status}}
         </p>
 
         <p><strong>Verificado:</strong>
-            {{#verificado}}✅ Sí{{/verificado}}
-            {{^verificado}}❌ No{{/verificado}}
+            {{#verified}}✅ Sí{{/verifies}}
+            {{^verified}}❌ No{{/verified}}
         </p>
 
         <h3>Publicaciones</h3>
         <div>
-            {{#publicaciones}}
+            {{#postList}}
                 <div class="pub">
-                    <p><strong>{{fechaHora}}</strong></p>
-                    <p>{{texto}}</p>
-                    <p>❤️ {{numeroLikes}} me gusta</p>
+                    <p><strong>{{dateTime}}</strong></p>
+                    <p>{{text}}</p>
+                    <p>❤️ {{likes}} me gusta</p>
                 </div>
-            {{/publicaciones}}
-            {{^publicaciones}}
+            {{/postList}}
+            {{^postList}}
                 <p>Este usuario aún no ha publicado nada.</p>
-            {{/publicaciones}}
+            {{/postList}}
         </div>
     </div>
 </body>
