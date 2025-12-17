@@ -28,7 +28,7 @@
         </p>
 
         <p><strong>Verificado:</strong>
-            {{#verified}}✅ Sí{{/verifies}}
+            {{#verified}}✅ Sí{{/verified}}
             {{^verified}}❌ No{{/verified}}
         </p>
 
@@ -36,7 +36,7 @@
         <div>
             {{#postList}}
                 <div class="pub">
-                    <p><strong>{{dateTime}}</strong></p>
+                    <p><strong>{{getFormatDateTime}}</strong></p>
                     <p>{{text}}</p>
                     <p>❤️ {{likes}} me gusta</p>
                 </div>

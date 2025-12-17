@@ -72,7 +72,7 @@ public class Profile {
 	}
 
 	public int getPosts() {
-		return posts;
+		return postList.size();
 	}
 
 	public void setPosts(int posts) {
@@ -91,6 +91,13 @@ public class Profile {
 		return status;
 	}
 
+	public List<Post> getPostList() {
+		return postList;
+	}
+	
+	public void setPostList(List<Post> postList) {
+		this.postList = postList;
+	}
 	
 //	MÉTODOS
 	public void show () {
@@ -116,9 +123,8 @@ public class Profile {
 	
 	public void newPost (String content) {
 		this.postList.add(new Post(content));
-		this.posts ++;
 	}
-	
+
 	public void showPosts() {
 		this.postList.forEach(p -> p.show());
 	}

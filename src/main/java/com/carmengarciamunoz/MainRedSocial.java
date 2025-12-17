@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.carmengarciamunoz.poo.redsocial.ProfileGenerator;
+import com.carmengarciamunoz.poo.redsocial.RenderizadorPerfil;
 import com.carmengarciamunoz.poo.redsocial.Profile;
 
 public class MainRedSocial {
@@ -27,6 +28,9 @@ public class MainRedSocial {
 		p2.newPost("En la playa!");
 		p2.show();
 		p2.showPosts();
+		
+		RenderizadorPerfil.HtmlProfileGenerator(p2, "C:\\Users\\CarmenGarcía-MuñozMa\\OneDrive - SUMMA Formación Profesional\\Escritorio\\pruebamustache.html");
+		
 	}
 
 }
